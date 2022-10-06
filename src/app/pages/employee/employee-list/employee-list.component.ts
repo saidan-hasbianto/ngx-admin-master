@@ -19,7 +19,7 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit(): void {
     this.createFakeData();
-
+                                                                                                                                                                                                                                                                                                                                                                                                  
     console.log(localStorage.getItem("employeeList"));
     console.log(localStorage);
 

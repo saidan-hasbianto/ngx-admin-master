@@ -17,16 +17,24 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'Employee',
+    title: 'Master',
     icon: 'people-outline',
     children: [
       {
-        title: 'List',
-        link: '/pages/employee/list',
+        title: 'Bidang Studi',
+        link: '/pages/master/bidang-studi',
       },
       {
-        title: 'New',
-        link: '/pages/employee/new',
+        title: 'Guru',
+        link: '/pages/master/guru',
+      },
+      {
+        title: 'Kelas',
+        link: '/pages/master/kelas',
+      },
+      {
+        title: 'Murid',
+        link: '/pages/master/murid',
       }
     ],
   },{

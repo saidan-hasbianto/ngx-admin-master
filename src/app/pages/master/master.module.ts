@@ -10,6 +10,7 @@ import { MuridDetailComponent } from './murid/murid-detail/murid-detail.componen
 import { MuridListComponent } from './murid/murid-list/murid-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThemeModule } from '../../@theme/theme.module';
+import { MasterRoutingModule } from './master-routing.module';
 
 
 
@@ -29,6 +30,7 @@ import { ThemeModule } from '../../@theme/theme.module';
     FormsModule,
     ReactiveFormsModule,
     ThemeModule,
+    MasterRoutingModule
   ]
 })
 export class MasterModule { }

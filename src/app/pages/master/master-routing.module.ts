@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MasterComponent } from './master.component';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { BidangStudiListComponent } from './bidang-studi/bidang-studi-list/bidang-studi-list.component';
 import { GuruListComponent } from './guru/guru-list/guru-list.component';
 import { KelasListComponent } from './kelas/kelas-list/kelas-list.component';
@@ -31,9 +30,7 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
 export class MasterRoutingModule { }

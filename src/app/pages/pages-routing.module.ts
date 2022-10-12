@@ -19,9 +19,9 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
-      path: 'employee',
-      loadChildren: () => import('./employee/employee.module')
-        .then(m => m.EmployeeModule),
+      path: 'master',
+      loadChildren: () => import('./master/master.module')
+        .then(m => m.MasterModule),
     },
     {
       path: 'layout',

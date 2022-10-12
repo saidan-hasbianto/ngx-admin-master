@@ -8,6 +8,8 @@ import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 
+import { MasterComponent } from './master/master.component';
+
 @NgModule({
   imports: [
     PagesRoutingModule,
@@ -19,6 +21,7 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
   ],
   declarations: [
     PagesComponent,
+    MasterComponent
   ],
 })
 export class PagesModule {

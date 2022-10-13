@@ -1,1 +1,20 @@
-<p>guru-list works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Alamat</th>
+            <th scope="col">Bidang Studi</th>
+            <th scope="col">Telepon</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let obj of objList; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ obj.nama }}</td>
+            <td>{{ obj.alamat }}</td>
+            <td>{{ obj.bidang_studi }}</td>
+            <td>{{ obj.tlp }}</td>
+        </tr>
+    </tbody>
+</table>

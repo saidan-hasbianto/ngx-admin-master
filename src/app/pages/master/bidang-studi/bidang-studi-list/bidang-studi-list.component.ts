@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MsBidangStudi } from '../../../../models/ms-bidang-studi';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'ngx-bidang-studi-list',
@@ -8,7 +9,7 @@ import { MsBidangStudi } from '../../../../models/ms-bidang-studi';
 })
 
 export class BidangStudiListComponent implements OnInit {
-  studiList: MsBidangStudi[] = [];
+  objList: MsBidangStudi[] = [];
 
   constructor() { }
 
@@ -20,16 +21,14 @@ export class BidangStudiListComponent implements OnInit {
     this.createFakeData("Agama Islam");
     // localStorage.setItem("studiList", JSON.stringify(studiList));
     // newStudiList = JSON.parse(localStorage.getItem("studiList"));
-    console.log(this.studiList);
-
   }
 
   createFakeData(bidang_studi: string) {
     let a = new MsBidangStudi();
-    a.id = Math.random().toString();
+    a.id = uuidv4();
     a.bidang_studi = bidang_studi;
     a.tahun_ajaran = 2022;
-    this.studiList.push(a);
+    this.objList.push(a);
   }
 
 }

@@ -7,12 +7,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let studi of studiList; index as i">
+        <tr *ngFor="let obj of objList; index as i">
             <th scope="row">{{ i + 1 }}</th>
             <td>
-                {{ studi.bidang_studi }}
+                {{ obj.bidang_studi }}
             </td>
-            <td>{{ studi.tahun_ajaran }}</td>
+            <td>{{ obj.tahun_ajaran }}</td>
         </tr>
     </tbody>
 </table>

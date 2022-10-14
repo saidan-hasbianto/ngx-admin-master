@@ -3,4 +3,5 @@ export class MsMurid {
     nama: string;
     alamat: string;
     kelas: string;
+    jk: string;
 }

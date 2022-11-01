@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NbComponentStatus } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-bidang-studi-detail',

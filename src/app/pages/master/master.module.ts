@@ -11,6 +11,8 @@ import { MuridListComponent } from './murid/murid-list/murid-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThemeModule } from '../../@theme/theme.module';
 import { MasterRoutingModule } from './master-routing.module';
+import { ButtonsComponent } from '../forms/buttons/buttons.component';
+import { NbButtonModule, NbCardModule } from '@nebular/theme';
 
 
 
@@ -23,14 +25,18 @@ import { MasterRoutingModule } from './master-routing.module';
     KelasDetailComponent,
     KelasListComponent,
     MuridDetailComponent,
-    MuridListComponent
+    MuridListComponent,
+
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     ThemeModule,
-    MasterRoutingModule
+    MasterRoutingModule, 
+    NbCardModule,
+    NbButtonModule,
+
   ]
 })
 export class MasterModule { }

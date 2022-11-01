@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-import { SmartTableData } from '../../../@core/data/smart-table';
-import { Employee } from '../../../models/employee';
+import { Employee } from '../../../../models/employee';
 
 @Component({
   selector: 'ngx-employee-list',
@@ -10,47 +9,11 @@ import { Employee } from '../../../models/employee';
 })
 export class EmployeeListComponent implements OnInit {
 
-  settings = {
-    add: {
-      addButtonContent: '<i class="nb-plus"></i>',
-      createButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    edit: {
-      editButtonContent: '<i class="nb-edit"></i>',
-      saveButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    delete: {
-      deleteButtonContent: '<i class="nb-trash"></i>',
-      confirmDelete: true,
-    },
-    columns: {
-      firstName: {
-        title: 'First Name',
-        type: 'string',
-      },
-      lastName: {
-        title: 'Last Name',
-        type: 'string',
-      },
-      username: {
-        title: 'Username',
-        type: 'string',
-      },
-      email: {
-        title: 'E-mail',
-        type: 'string',
-      },
-      status: {
-        title: 'Status',
-        type: 'string',
-      },
-    },
-  };
-  source: LocalDataSource = new LocalDataSource();
+  
+  // source: LocalDataSource = new LocalDataSource();
+  objList: Employee[] = [];
 
-  constructor(private service: SmartTableData) {
+  constructor() {
     // let a = new Employee();
     // a.id = "d5024df9-fee1-497d-9c7d-b56a43cc18a6";
     // a.basicSalary = 4300000;
@@ -78,7 +41,7 @@ export class EmployeeListComponent implements OnInit {
     // employeeList.push(a);
 
     // console.log(employeeList);
-    
+
     // const data = this.service.getData();
     // this.source.load(data);
     // const data = employeeList;
@@ -113,9 +76,9 @@ export class EmployeeListComponent implements OnInit {
     a.lastName = "staff";
     a.status = "test";
     a.username = "tester1";
-    let employeeList = [];
-    employeeList.push(a);
-    a = new Employee();
+    this.objList.push(a);
+  
+    // a = new Employee();
     a.id = "f1465bca-38b3-471d-b796-a73985dfb706";
     a.basicSalary = 5000000;
     a.birthDate = new Date('1988-01-27');
@@ -126,10 +89,11 @@ export class EmployeeListComponent implements OnInit {
     a.lastName = "staff";
     a.status = "tester2";
     a.username = "tester2";
-    employeeList.push(a);
+    this.objList.push(a);
 
-    localStorage.setItem("employeeList", JSON.stringify(employeeList));
-    this.source.load(employeeList);
+
+    // localStorage.setItem("employeeList", JSON.stringify(employeeList));
+   
 
   }
 }

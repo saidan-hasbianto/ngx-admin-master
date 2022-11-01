@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MsBidangStudi } from '../../../../models/ms-bidang-studi';
 import { v4 as uuidv4 } from 'uuid';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-bidang-studi-list',
@@ -11,7 +12,9 @@ import { v4 as uuidv4 } from 'uuid';
 export class BidangStudiListComponent implements OnInit {
   objList: MsBidangStudi[] = [];
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.createFakeData("Matematika");
@@ -31,4 +34,9 @@ export class BidangStudiListComponent implements OnInit {
     this.objList.push(a);
   }
 
+  btnClick(){
+    console.log("disini");
+    
+    this.router.navigate(['./master/bidang-studi-detail']);
+  }
 }

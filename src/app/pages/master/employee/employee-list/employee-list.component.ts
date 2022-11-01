@@ -9,7 +9,7 @@ import { Employee } from '../../../../models/employee';
 })
 export class EmployeeListComponent implements OnInit {
 
-  
+
   // source: LocalDataSource = new LocalDataSource();
   objList: Employee[] = [];
 
@@ -77,7 +77,7 @@ export class EmployeeListComponent implements OnInit {
     a.status = "test";
     a.username = "tester1";
     this.objList.push(a);
-  
+
     // a = new Employee();
     a.id = "f1465bca-38b3-471d-b796-a73985dfb706";
     a.basicSalary = 5000000;
@@ -93,7 +93,11 @@ export class EmployeeListComponent implements OnInit {
 
 
     // localStorage.setItem("employeeList", JSON.stringify(employeeList));
-   
+
+
+  }
+
+  btnClick() {
 
   }
 }

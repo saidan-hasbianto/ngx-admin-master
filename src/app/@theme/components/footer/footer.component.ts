@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   template: `
     <span class="created-by">
       Created with ♥ by <b><a href="https://akveo.page.link/8V2f" target="_blank">Akveo</a></b> 2019
-    </span>`,
+    </span>
+  `,
 })
 export class FooterComponent {
 }

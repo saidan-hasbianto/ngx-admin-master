@@ -13,6 +13,12 @@ export class MuridListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    for (let i = 0; i < 5; i++) {
+      this.createFakeData("murid " + i, "1", "alamat murid " + i);
+    }
+    for (let i = 0; i < 5; i++) {
+      this.createFakeData("murid " + i, "2", "alamat murid " + i);
+    }
   }
 
   createFakeData(nama: string, kelas: string, alamat: string) {

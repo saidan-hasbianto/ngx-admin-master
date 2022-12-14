@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LocalDataSource } from 'ng2-smart-table';
 import { Employee } from '../../../../models/employee';
 
@@ -13,7 +14,9 @@ export class EmployeeListComponent implements OnInit {
   // source: LocalDataSource = new LocalDataSource();
   objList: Employee[] = [];
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     // let a = new Employee();
     // a.id = "d5024df9-fee1-497d-9c7d-b56a43cc18a6";
     // a.basicSalary = 4300000;
@@ -78,18 +81,18 @@ export class EmployeeListComponent implements OnInit {
     a.username = "tester1";
     this.objList.push(a);
 
-    // a = new Employee();
-    a.id = "f1465bca-38b3-471d-b796-a73985dfb706";
-    a.basicSalary = 5000000;
-    a.birthDate = new Date('1988-01-27');
-    a.description = "tester2";
-    a.email = "tester2@nanana.com";
-    a.firstName = "tester2";
-    a.group = "tester2";
-    a.lastName = "staff";
-    a.status = "tester2";
-    a.username = "tester2";
-    this.objList.push(a);
+    let b  = new Employee();
+    b.id = "f1465bca-38b3-471d-b796-a73985dfb706";
+    b.basicSalary = 5000000;
+    b.birthDate = new Date('1988-01-27');
+    b.description = "tester2";
+    b.email = "tester2@nanana.com";
+    b.firstName = "tester2";
+    b.group = "tester2";
+    b.lastName = "staff";
+    b.status = "tester2";
+    b.username = "tester2";
+    this.objList.push(b);
 
 
     // localStorage.setItem("employeeList", JSON.stringify(employeeList));
@@ -98,6 +101,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   btnClick() {
+    this.router.navigateByUrl('/pages/master/employee-detail');
 
   }
 }

@@ -12,7 +12,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThemeModule } from '../../@theme/theme.module';
 import { MasterRoutingModule } from './master-routing.module';
 import { ButtonsComponent } from '../forms/buttons/buttons.component';
-import { NbButtonModule, NbCardModule } from '@nebular/theme';
+import { NbActionsModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbDatepickerModule, NbIconModule, NbRadioModule, NbSelectModule, NbUserModule } from '@nebular/theme';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
+import { FormsRoutingModule } from '../forms/forms-routing.module';
+import { FormsModule as ngFormsModule } from '@angular/forms';
 
 
 
@@ -26,17 +30,29 @@ import { NbButtonModule, NbCardModule } from '@nebular/theme';
     KelasListComponent,
     MuridDetailComponent,
     MuridListComponent,
-
+    EmployeeListComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     ThemeModule,
-    MasterRoutingModule, 
+    MasterRoutingModule,
     NbCardModule,
     NbButtonModule,
-
+    ThemeModule,
+    NbCardModule,
+    NbButtonModule,
+    NbActionsModule,
+    NbUserModule,
+    NbCheckboxModule,
+    NbRadioModule,
+    NbDatepickerModule,
+    FormsRoutingModule,
+    NbSelectModule,
+    NbIconModule,
+    ngFormsModule,
   ]
 })
 export class MasterModule { }

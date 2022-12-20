@@ -1,23 +1,37 @@
 <div class="row">
-    <div class="col-lg-6">
-        <nb-card>
-            <nb-card-header>Employee</nb-card-header>
-            <nb-card-body>
-                <input type="text" nbInput fullWidth placeholder="First Name">
-                <div class="full-name-inputs">
-                    <input type="text" nbInput fullWidth placeholder="Nick">
-                    <input type="text" nbInput fullWidth placeholder="Last Name">
-                </div>
-                <input type="password" nbInput fullWidth placeholder="Password">
-                <input type="text" nbInput fullWidth shape="rectangle" placeholder="Rectangle border">
-                <input type="text" nbInput fullWidth shape="semi-round" placeholder="Semi-round border">
-                <input type="text" nbInput fullWidth shape="round" placeholder="Rounded border">
-                <input type="text" nbInput fullWidth placeholder="Disabled input" disabled />
-                <textarea rows="5" nbInput fullWidth shape="round" placeholder="Text Area"></textarea>
-                <input type="text" nbInput fullWidth fieldSize="small" placeholder="Small Input">
-                <input type="text" nbInput fullWidth fieldSize="medium" placeholder="Medium Input">
-                <input type="text" nbInput fullWidth fieldSize="large" placeholder="Large Input">
-            </nb-card-body>
-        </nb-card>
+    <div class="col-lg-12">
+        <form #employeedetail = "ngForm" (ngSubmit) = "onClickSubmit(employeedetail.value)" >
+            <nb-card>
+                <nb-card-header>New Employee</nb-card-header>
+                <nb-card-body>
+                    <div class="full-name-inputs">
+                        <input type="text" name="fname" nbInput fullWidth placeholder="First Name" ngModel>
+                        <input type="text" name="lname"nbInput fullWidth placeholder="Last Name" ngModel>
+                    </div>
+                    <input type="text" name="uname" nbInput fullWidth placeholder="Username" ngModel>
+                    <div class="full-name-inputs">
+                        <input type="text" name="email" nbInput fullWidth placeholder="Email" ngModel>
+                        <input type="password" name="pswd" nbInput fullWidth placeholder="Password" ngModel>
+                    </div>
+                    <input type="text" name="salary" nbInput fullWidth placeholder="Basic Salary" ngModel>
+                    <div class="full-name-inputs">
+                        <label class="label col-sm-1 col-form-label">Status</label>
+                        <nb-select selected="1" class="col-sm-7">
+                            <nb-option value="1">Active</nb-option>
+                            <nb-option value="2">Non - Active</nb-option>
+                        </nb-select>
+                        <label class="label col-sm-2 col-form-label">Birth Date</label>
+                        <input class="col-sm-5" name="bdate" nbInput placeholder="Choose Date" [nbDatepicker]="formpicker" ngModel>
+                        <nb-datepicker #formpicker></nb-datepicker>
+                    </div>
+                    <input type="text" name="group" nbInput fullWidth placeholder="Group" ngModel>
+                    <textarea rows="5" name="desc" nbInput fullWidth placeholder="Description" ngModel></textarea>
+                    <div class="buttons-row">
+                        <button type="submit" value="submit" nbButton status="primary">Save</button>
+                        <button (click)="btnClick();" nbButton status="danger">Cancel</button>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+        </form>
     </div>
 </div>

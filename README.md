@@ -3,7 +3,7 @@ Cara install :
 2. Buka Command Prompt dan arahkan ke folder ini
 3. Di Command Prompt ketik "npm i" (tanpa tanda petik)
 4. Tunggu hingga selesai
-5. Ketik kembali di Command Prompt "ng serve -o"
+5. Ketik kembali di Command Prompt "npm start"
 6. Tunggu hingga browser (disarankan Chrome) otomatis membuka Program ini
 
 # ngx-admin [<img src="https://i.imgur.com/oMcxwZ0.png" alt="Eva Design System" height="20px" />](https://eva.design?utm_campaign=eva_design%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=top_status_tile) [![Build Status](https://travis-ci.org/akveo/ngx-admin.svg?branch=master)](https://travis-ci.org/akveo/ngx-admin)

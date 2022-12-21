@@ -19,8 +19,8 @@ export class EmployeeDetailComponent implements OnInit {
     // let myparse = JSON.parse(localStorage.getItem("employeeList"));
     JSON.parse(localStorage.getItem("employeeList")).forEach(element => {
       this.objList.push(element);
-  });
-}
+    });
+  }
 
   onClickSubmit(data) {
 
@@ -40,13 +40,13 @@ export class EmployeeDetailComponent implements OnInit {
     a.username = data.fname;
     this.objList.push(a);
     // console.log(JSON.stringify(this.objList));
-
-    // localStorage.setItem("employeeList", JSON.stringify(this.objList));
+    localStorage.removeItem("employeeList");
+    localStorage.setItem("employeeList", JSON.stringify(this.objList));
     this.router.navigateByUrl('/pages/master/employee');
 
   }
-  btnClick= function () {
+  btnClick = function () {
     this.router.navigateByUrl('/pages/master/employee');
 
-};
+  };
 }

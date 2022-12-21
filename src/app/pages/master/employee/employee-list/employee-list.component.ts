@@ -23,6 +23,8 @@ export class EmployeeListComponent implements OnInit {
     console.log(localStorage.getItem("employeeList"));
 
     if (localStorage.getItem("employeeList") === null) {
+      console.log(localStorage.getItem("employeeList"));
+      
       this.createFakeData();
     }
 

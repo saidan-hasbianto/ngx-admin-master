@@ -20,24 +20,33 @@ export class EmployeeListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem("employeeList"));
 
-    if (localStorage.getItem("employeeList") === null) {
-      console.log(localStorage.getItem("employeeList"));
-      
+    if (localStorage.getItem("employeeList") === null || localStorage.getItem("employeeList") == "[]") {
       this.createFakeData();
+      console.log(localStorage.getItem("employeeList"));
+    } else {
+      console.log(localStorage.getItem("employeeList"));
+      this.myParse = [];
+      JSON.parse(localStorage.getItem("employeeList")).forEach(element => {
+        this.myParse.push(element);
+      });
     }
-
-    JSON.parse(localStorage.getItem("employeeList")).forEach(element => {
-      this.myParse.push(element);
-    });
   }
 
-  onDeleteConfirm(event): void {
+  onDeleteConfirm(index): void {
     if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve();
+      JSON.parse(localStorage.getItem("employeeList")).forEach(element => {
+        this.objList.push(element);
+      });
+      for (let i = 0; i < this.objList.length; ++i) {
+        if (i === index) { this.objList.splice(i, 1); }
+      }
+      // insert updated array to local storage
+      localStorage.removeItem("employeeList");
+      localStorage.setItem("employeeList", JSON.stringify(this.objList));
+      // localStorage.set("employeeList", JSON.stringify(currentArray));
+      this.ngOnInit();
     } else {
-      event.confirm.reject();
     }
   }
 

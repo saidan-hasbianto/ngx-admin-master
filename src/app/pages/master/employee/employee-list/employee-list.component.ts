@@ -20,17 +20,17 @@ export class EmployeeListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.myParse = [];
+    console.log(localStorage.getItem("employeeList"));
+    console.log(localStorage.getItem("employeeList") == "[]");
 
-    if (localStorage.getItem("employeeList") === null || localStorage.getItem("employeeList") == "[]") {
+    if (localStorage.getItem("employeeList") == "[]") {
       this.createFakeData();
-      console.log(localStorage.getItem("employeeList"));
-    } else {
-      console.log(localStorage.getItem("employeeList"));
-      this.myParse = [];
-      JSON.parse(localStorage.getItem("employeeList")).forEach(element => {
-        this.myParse.push(element);
-      });
     }
+    JSON.parse(localStorage.getItem("employeeList")).forEach(element => {
+      this.myParse.push(element);
+    });
+
   }
 
   onDeleteConfirm(index): void {
@@ -45,9 +45,17 @@ export class EmployeeListComponent implements OnInit {
       localStorage.removeItem("employeeList");
       localStorage.setItem("employeeList", JSON.stringify(this.objList));
       // localStorage.set("employeeList", JSON.stringify(currentArray));
-      this.ngOnInit();
+      // this.ngOnInit();
+      window.location.reload();
     } else {
     }
+  }
+
+  clear() {
+    localStorage.removeItem("employeeList");
+    console.log(localStorage.getItem("employeeList"));
+    console.log(localStorage.getItem("employeeList") == "[]");
+
   }
 
   createFakeData() {
@@ -77,6 +85,7 @@ export class EmployeeListComponent implements OnInit {
     b.username = "tester2";
     this.objList.push(b);
 
+    localStorage.removeItem("employeeList");
     localStorage.setItem("employeeList", JSON.stringify(this.objList));
   }
 

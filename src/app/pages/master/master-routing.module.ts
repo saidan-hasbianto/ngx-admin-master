@@ -8,6 +8,9 @@ import { MuridListComponent } from './murid/murid-list/murid-list.component';
 import { BidangStudiDetailComponent } from './bidang-studi/bidang-studi-detail/bidang-studi-detail.component';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
+import { GuruDetailComponent } from './guru/guru-detail/guru-detail.component';
+import { KelasDetailComponent } from './kelas/kelas-detail/kelas-detail.component';
+import { MuridDetailComponent } from './murid/murid-detail/murid-detail.component';
 
 const routes: Routes = [{
   path: '',
@@ -26,12 +29,24 @@ const routes: Routes = [{
       component: GuruListComponent,
     },
     {
+      path: 'guru-detail',
+      component: GuruDetailComponent,
+    },
+    {
       path: 'kelas',
       component: KelasListComponent,
     },
     {
+      path: 'kelas-detail',
+      component: KelasDetailComponent,
+    },
+    {
       path: 'murid',
       component: MuridListComponent,
+    },
+    {
+      path: 'murid-detail',
+      component: MuridDetailComponent,
     },
     {
       path: 'employee',

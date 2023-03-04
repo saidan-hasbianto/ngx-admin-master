@@ -1,20 +1,28 @@
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">No.</th>
-            <th scope="col">Nama</th>
-            <th scope="col">Alamat</th>
-            <th scope="col">Bidang Studi</th>
-            <th scope="col">Telepon</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let obj of objList; index as i">
-            <th scope="row">{{ i + 1 }}</th>
-            <td>{{ obj.nama }}</td>
-            <td>{{ obj.alamat }}</td>
-            <td>{{ obj.bidang_studi }}</td>
-            <td>{{ obj.tlp }}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="row">
+    <div class="col-lg-6">
+        <h2>Guru</h2>
+        <button nbButton status="primary" (click)="btnClick();">
+            New
+        </button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Bidang Studi</th>
+                    <th scope="col">Telepon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let obj of objList; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ obj.nama }}</td>
+                    <td>{{ obj.alamat }}</td>
+                    <td>{{ obj.bidang_studi }}</td>
+                    <td>{{ obj.tlp }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

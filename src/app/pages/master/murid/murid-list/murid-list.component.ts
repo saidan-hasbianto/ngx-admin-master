@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MsMurid } from '../../../../models/ms-murid';
 import { v4 as uuidv4 } from 'uuid';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-murid-list',
@@ -10,7 +11,9 @@ import { v4 as uuidv4 } from 'uuid';
 export class MuridListComponent implements OnInit {
   objList: MsMurid[] = [];
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     for (let i = 0; i < 5; i++) {
@@ -28,5 +31,11 @@ export class MuridListComponent implements OnInit {
     a.nama = nama;
     a.alamat = alamat;
     this.objList.push(a);
+  }
+
+  btnClick(){
+    console.log("disini");
+    
+    this.router.navigate(['./master/murid-detail']);
   }
 }

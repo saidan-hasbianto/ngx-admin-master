@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MsKelas } from '../../../../models/ms-kelas';
 import { v4 as uuidv4 } from 'uuid';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-kelas-list',
@@ -10,7 +11,9 @@ import { v4 as uuidv4 } from 'uuid';
 export class KelasListComponent implements OnInit {
   objList: MsKelas[] = [];
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.createFakeData("1-A",31);
@@ -26,5 +29,11 @@ export class KelasListComponent implements OnInit {
     a.jumlah_murid = jumlah_murid;
     a.nama = nama;
     this.objList.push(a);
+  }
+
+  btnClick(){
+    console.log("disini");
+    
+    this.router.navigate(['./master/kelas-detail']);
   }
 }

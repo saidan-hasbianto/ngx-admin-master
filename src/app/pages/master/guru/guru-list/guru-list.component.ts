@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MsGuru } from '../../../../models/ms-guru';
 import { v4 as uuidv4 } from 'uuid';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'ngx-guru-list',
@@ -10,7 +12,9 @@ import { v4 as uuidv4 } from 'uuid';
 export class GuruListComponent implements OnInit {
   objList: MsGuru[] = [];
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.createFakeData("Matematika","Depok","Guru 1","08989999");
@@ -28,5 +32,11 @@ export class GuruListComponent implements OnInit {
     a.nama = nama;
     a.tlp = tlp;
     this.objList.push(a);
+  }
+
+  btnClick(){
+    console.log("disini");
+    
+    this.router.navigate(['./master/guru-detail']);
   }
 }

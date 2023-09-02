@@ -1,4 +1,12 @@
 <h2>Kelas</h2>
+
+<nb-select placeholder="Filter kelas" (selectedChange)="filterKelas($event)">
+    <nb-option value="0">Semua kelas</nb-option>
+    <nb-option value="1">Kelas 1</nb-option>
+    <nb-option value="2">Kelas 2</nb-option>
+    <nb-option value="3">Kelas 3</nb-option>
+    <nb-option value="4">Kelas 4</nb-option>
+</nb-select>
 <button nbButton status="primary" (click)="btnClick();">
     New
 </button>
@@ -11,7 +19,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let obj of objList; index as i">
+        <tr *ngFor="let obj of objList; trackBy: trackItem; index as i">
             <th scope="row">{{ i + 1 }}</th>
             <td>{{ obj.nama }}</td>
             <td>{{ obj.jumlah_murid }}</td>

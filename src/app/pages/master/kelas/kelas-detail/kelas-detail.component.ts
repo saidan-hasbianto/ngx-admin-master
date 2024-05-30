@@ -12,4 +12,12 @@ export class KelasDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  btnClick(){
+
+  }
+
+  onClickSubmit(param1){
+
+  }
+
 }

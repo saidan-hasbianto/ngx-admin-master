@@ -42,7 +42,7 @@ export class KelasListComponent implements OnInit {
   }
 
   btnClick() {
-    this.router.navigate(['./master/kelas-detail']);
+    this.router.navigate(['./pages/master/kelas-detail']);
   }
 
   filterKelas(event) {

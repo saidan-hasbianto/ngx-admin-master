@@ -1,1 +1,37 @@
-<p>kelas-detail works!</p>
+<div class="row">
+    <div class="col-lg-12">
+        <form #kelasdetail = "ngForm" (ngSubmit) = "onClickSubmit(kelasdetail.value)" >
+            <nb-card>
+                <nb-card-header>Input Kelas</nb-card-header>
+                <nb-card-body>
+                    <div class="full-name-inputs">
+                        <input type="text" name="fname" nbInput fullWidth placeholder="First Name" ngModel>
+                        <input type="text" name="lname"nbInput fullWidth placeholder="Last Name" ngModel>
+                    </div>
+                    <input type="text" name="uname" nbInput fullWidth placeholder="Username" ngModel>
+                    <div class="full-name-inputs">
+                        <input type="text" name="email" nbInput fullWidth placeholder="Email" ngModel>
+                        <input type="password" name="pswd" nbInput fullWidth placeholder="Password" ngModel>
+                    </div>
+                    <input type="text" name="salary" nbInput fullWidth placeholder="Basic Salary" ngModel>
+                    <div class="full-name-inputs">
+                        <label class="label col-sm-1 col-form-label">Status</label>
+                        <nb-select selected="1" class="col-sm-7">
+                            <nb-option value="1">Active</nb-option>
+                            <nb-option value="2">Non - Active</nb-option>
+                        </nb-select>
+                        <label class="label col-sm-2 col-form-label">Birth Date</label>
+                        <input class="col-sm-5" name="bdate" nbInput placeholder="Choose Date" [nbDatepicker]="formpicker" ngModel>
+                        <nb-datepicker #formpicker></nb-datepicker>
+                    </div>
+                    <input type="text" name="group" nbInput fullWidth placeholder="Group" ngModel>
+                    <textarea rows="5" name="desc" nbInput fullWidth placeholder="Description" ngModel></textarea>
+                    <div class="buttons-row">
+                        <button type="submit" value="submit" nbButton status="primary">Save</button>
+                        <button (click)="btnClick();" nbButton status="danger">Cancel</button>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+        </form>
+    </div>
+</div>
